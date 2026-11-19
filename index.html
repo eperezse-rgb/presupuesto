@@ -1003,16 +1003,7 @@ function renderTable(ds) {
             </tr>`;
         }).join('');
 
-    const li = ds.meses.length - 1;
-    const tC = ds.agrup.corriente[li], tK = ds.agrup.capital[li], tF = ds.agrup.financiero[li];
-    document.getElementById('dataTableOpsFoot').innerHTML =
-        `<tr>
-          <td>${ds.meses[li]}</td>
-          <td class="num">${fmtES(tC)}</td>
-          <td class="num${tK < 0 ? ' neg' : ''}">${fmtES(tK)}</td>
-          <td class="num${tF < 0 ? ' neg' : ''}">${fmtES(tF)}</td>
-          <td class="num">${fmtES(tC + tK + tF)}</td>
-        </tr>`;
+    document.getElementById('dataTableOpsFoot').innerHTML = '';
 }
 
 function render() {
